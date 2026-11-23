@@ -93,3 +93,13 @@ habit_records["Exercise"]["2026-11-24"] = True
 
 print("\nUpdated Exercise Records:")
 print(habit_records["Exercise"])
+
+for habit in habit_records:
+    print("\nHabit :",habit)
+
+    for date in habit_records[habit]:
+        if habit_records[habit][date] == True:
+            print(date,": completed")
+        else:
+            print(date,": Pending")
+
