@@ -36,3 +36,12 @@ print("4",habits[3])
 print("5",habits[4])
 print("6",habits[5])
 print("7",habits[6])
+
+print("======  ADD NEW HABIT ======")
+
+new_habit=input("Add New Habit :- ")
+habits.append(new_habit)
+
+print("\n Updated Habit List")
+for habit in habits:
+    print("-",habit)
