@@ -109,4 +109,13 @@ for habit in habit_records:
 print("\nCompleted : ",complete_count)
 print("\nPending : ", pending_count)
 
+if total_habit >0:
+    process=(complete_count/total_habit)*100
+else:
+    process=0
 
+print("======DAILY PROCESS======")
+print("Total Habits :- ",total_habit)
+print("Completed :- ",complete_count)
+print("Pending :- ",pending_count)
+print("Completion percentage:",process,"%")
