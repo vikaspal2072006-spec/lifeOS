@@ -44,7 +44,6 @@ print("====== REMOVE A HABIT ======")
 remove_habit=input("Enter Habit to remove :- ").strip().lower()
 found = False
 for habit in habits:
-    print("Checking:", repr(habit), "vs", repr(remove_habit))
     if habit.strip().lower() == remove_habit.strip().lower():
         habits.remove(habit)
         found = True
@@ -94,12 +93,20 @@ habit_records["Exercise"]["2026-11-24"] = True
 print("\nUpdated Exercise Records:")
 print(habit_records["Exercise"])
 
+complete_count = 0
+pending_count = 0
 for habit in habit_records:
-    print("\nHabit :",habit)
+    print("\nHabit",habit)
 
     for date in habit_records[habit]:
-        if habit_records[habit][date] == True:
+        if habit_records[habit][date]==True:
             print(date,": completed")
+            complete_count += 1
         else:
-            print(date,": Pending")
+            print(date,":pending")
+            pending_count += 1
+
+print("\nCompleted : ",complete_count)
+print("\nPending : ", pending_count)
+
 
