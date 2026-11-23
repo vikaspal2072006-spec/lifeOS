@@ -45,3 +45,21 @@ habits.append(new_habit)
 print("\n Updated Habit List")
 for habit in habits:
     print("-",habit)
+
+print("====== REMOVE A HABIT ======")
+
+remove_habit=(input("Enter Habit to remove :- ".strip().lower()))
+found = False
+for habit in habits:
+    print("Checking:", repr(habit), "vs", repr(remove_habit))
+    if habit.strip().lower() == remove_habit.strip().lower():
+        habits.remove(habit)
+        found = True
+        break
+if found:
+    print("Habit Remove Successfully!!")
+else:
+    print("habit not found")
+
+for habit in habits:
+    print("-",habit)
