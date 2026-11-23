@@ -24,20 +24,13 @@ habits=[
 ]
 
 #Display habits
-print("=========== MY DAILY HABITS ===========")
-for habit in habits:
-    print("-",habit)
+print("\n=========== MY DAILY HABITS ===========")
+for index, habit in enumerate(habits,start=1):
+    print(index,habit)
 
-print("\n===== HABIT DETAILS ======")
-print("1",habits[0])
-print("2",habits[1])
-print("3",habits[2])
-print("4",habits[3])
-print("5",habits[4])
-print("6",habits[5])
-print("7",habits[6])
 
-print("======  ADD NEW HABIT ======")
+
+print("\n======  ADD NEW HABIT ======")
 
 new_habit=input("Add New Habit :- ")
 habits.append(new_habit)
@@ -48,7 +41,7 @@ for habit in habits:
 
 print("====== REMOVE A HABIT ======")
 
-remove_habit=(input("Enter Habit to remove :- ".strip().lower()))
+remove_habit=input("Enter Habit to remove :- ").strip().lower()
 found = False
 for habit in habits:
     print("Checking:", repr(habit), "vs", repr(remove_habit))
@@ -63,3 +56,40 @@ else:
 
 for habit in habits:
     print("-",habit)
+
+print("\n====== HABIT SUMMARY ======")
+total_habit=len(habits)
+print("TOTAL HABITS :- ",total_habit)
+
+print("\n ======= CHECK HABIT ======")
+
+check_habit=(input("ENTER HABIT TO CHECK :- ")).strip().lower()
+if check_habit in [habit.lower() for habit in habits]:
+    print("Habit exists!")
+else:
+    print("Habit does not exist")
+
+print("\n====== SORTED HABITS =======")
+
+habits.sort()
+for habit in habits:
+    print("-",habit)
+
+habit_records = {
+    "Exercise": {
+        "2026-11-23": True,
+        "2026-11-24": False
+    },
+    "Study Python": {
+        "2026-11-23": True,
+        "2026-11-24": False
+    }
+}
+print(habit_records["Exercise"])
+print(habit_records["Exercise"]["2026-11-23"])
+print(habit_records["Study Python"]["2026-11-24"])
+# Update Exercise status
+habit_records["Exercise"]["2026-11-24"] = True
+
+print("\nUpdated Exercise Records:")
+print(habit_records["Exercise"])
